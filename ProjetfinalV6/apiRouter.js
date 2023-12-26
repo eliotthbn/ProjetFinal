@@ -17,5 +17,9 @@ exports.router = (function(){
     apiRouter.route('/messages/new/').post(messagesCtrl.createMessage);
     apiRouter.route('/messages/').get(messagesCtrl.listMessage);
 
+    //Routes pour Abonnements
+    apiRouter.route('/users/:userId/subscribe/:followerId').post(abonnementsCtrl.subscribe);
+    apiRouter.route('/users/:userId/unsubscribe/:subscriptionId').delete(abonnementsCtrl.unsubscribe);
+
     return apiRouter;
 })();
